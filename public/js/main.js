@@ -19,9 +19,17 @@ function create() {
 
 	var platform = land.create(0, game.world.height - 64, 'land')
 	platform.scale.setTo(.75, .75);
+	platform.body.immovable = true;
 
+	platform = land.create(300, 400, 'land')
+	platform.scale.setTo(.75, .75);
+	platform.body.immovable = true;
+
+	platform = land.create(600, 250, 'land')
+	platform.scale.setTo(.75, .75);
+	platform.body.immovable = true;
 }
 
 function update() {
 
-3}
+}
