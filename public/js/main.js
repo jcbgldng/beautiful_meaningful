@@ -8,6 +8,7 @@ function preload() {
 
 var land;
 var player;
+var cursors;
 
 function create() {
 		
@@ -35,12 +36,50 @@ function create() {
 	player.scale.setTo(.5, .5);
 
 	game.physics.arcade.enable(player);
-	player.body.gravity.y = 300;
+	player.body.gravity.y = 400;
 	player.body.collideWorldBounds = true;
 
-
+	cursors = game.input.keyboard.createCursorKeys();
 }
 
 function update() {
+
+	game.physics.arcade.collide(player, land)
+
+	player.body.velocity.x = 0;
+
+	if (cursors.left.isDown)
+	{
+		//  Move to the left
+		player.body.velocity.x = -250;
+
+	}
+	else if (cursors.right.isDown)
+	{
+		//  Move to the right
+		player.body.velocity.x = 250;
+
+	}
+	else
+	{
+		//  Stand still
+		player.animations.stop();
+
+		player.frame = 4;
+	}
+
+	//  Allow the player to jump if they are touching the ground.
+	if (cursors.up.isDown && player.body.touching.down)
+	{
+		player.body.velocity.y = -350;
+	}
+
+	if (player.body.onFloor()) {
+		fail(player);
+	}
+
+	function fail(player) {
+		player.reset(0, game.world.height -150);
+	}
 
 }
