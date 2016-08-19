@@ -43,7 +43,7 @@ create: function() {
 },
 
 update: function() {
-
+	var statemaneger = this
 	this.physics.arcade.collide(player, land)
 	this.physics.arcade.overlap(player, end, finish, null, this);
 
@@ -76,11 +76,11 @@ update: function() {
 	}
 
 	if (player.body.onFloor()) {
-		fail(player);
+		fail();
 	}
 
-	function fail(player) {
-		player.reset(0, 400);
+	function fail() {
+		statemaneger.state.start('Level1');
 	}
 
 	function finish() {

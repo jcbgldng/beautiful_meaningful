@@ -8,5 +8,6 @@ Platformer.game.state.add('Preload', Platformer.Preload);
 Platformer.game.state.add('MainMenu', Platformer.MainMenu);
 Platformer.game.state.add('Level1', Platformer.Level1);
 Platformer.game.state.add('Level2', Platformer.Level2);
+Platformer.game.state.add('Finish', Platformer.Finish);
  
 Platformer.game.state.start('Boot');

@@ -3,13 +3,14 @@ Platformer.MainMenu = function(){};
 Platformer.MainMenu.prototype = {
   create: function() {
    //show the space tile, repeated
-    this.add.sprite(0, 0, 'background2');
+    var backing = this.add.sprite(0, 0, 'background2');
+    backing.scale.setTo(.6, .4);
     
     //start game text
     var text = "Tap to begin";
-    var style = { font: "30px Arial", fill: "#fff", align: "center" };
+    var style = { font: "30px Arial", fill: "#000000", align: "center" };
     var t = this.game.add.text(this.game.width/2, this.game.height/2, text, style);
-    t.anchor.set(0.5);
+    
  
   },
   update: function() {

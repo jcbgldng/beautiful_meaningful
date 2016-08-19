@@ -17,9 +17,11 @@ Platformer.Preload.prototype = {
 
    	this.load.image('platform1', 'assets/ground_grass_small .png')
    	this.load.image('platform2', 'assets/ground_sand_small.png')
+    this.load.image('hazard', 'assets/spikes_top.png')
 
-	this.load.image('player', 'assets/flyMan_stand.png')
-	this.load.image('end', 'assets/gold_1.png')
+	 this.load.image('player', 'assets/flyMan_stand.png')
+
+	 this.load.image('end', 'assets/gold_1.png')
   },
   create: function() {
    this.state.start('MainMenu');
